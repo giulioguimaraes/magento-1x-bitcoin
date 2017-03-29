@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category    Anarchy
+ * @package     Anarchy_Bitcoin
+ * @copyright   Fuck the system _|_
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <Anarchy_Bitcoin>
+            <version>1.0.0</version>
+        </Anarchy_Bitcoin>
+    </modules>
+    
+    <global>
+        <fieldsets>
+<!--
+            <sales_convert_quote_payment>
+                <custom_field_one>
+                    <to_order_payment>*</to_order_payment>
+                </custom_field_one>
+
+                <custom_field_two>
+                    <to_order_payment>*</to_order_payment>
+                </custom_field_two>
+            </sales_convert_quote_payment>
+-->
+        </fieldsets>
+        <helpers>
+            <anarchy_bitcoin>
+                <class>Anarchy_Bitcoin_Helper</class>
+            </anarchy_bitcoin>
+        </helpers>
+        <blocks>
+            <anarchy_bitcoin>
+                <class>Anarchy_Bitcoin_Block</class>
+            </anarchy_bitcoin>
+        </blocks>
+        <models>
+            <anarchy_bitcoin>
+                <class>Anarchy_Bitcoin_Model</class>
+            </anarchy_bitcoin>
+        </models>
+<!--        
+        <resources>
+            <anarchy_bitcoin_setup>
+                <setup>
+                    <module>Anarchy_Bitcoin</module>
+                </setup>
+            </anarchy_bitcoin_setup>
+        </resources>
+-->        
+    </global>
+
+    <default>
+        <payment>
+            <bitcoin>
+                <active>1</active>
+                <model>anarchy_bitcoin/bitcoin</model>
+                <order_status>pending</order_status>
+                <title>Bitcoin</title>
+                <allowspecific>0</allowspecific>
+                <payment_action>sale</payment_action>
+            </bitcoin>
+        </payment>
+    </default>
+</config>
