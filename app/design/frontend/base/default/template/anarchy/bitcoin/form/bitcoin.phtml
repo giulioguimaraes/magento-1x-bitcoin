@@ -19,7 +19,13 @@
  */
 ?> 
 <div class="form-list" id="payment_form_<?php echo $this->getMethodCode() ?>" style="display:none;">
-    :)
+    <div>
+        <img src="<?php echo Mage::helper('anarchy_bitcoin/wallet')->createQrCodeWallet();?>">
+    </div>
+
+    <div>
+        <p><?php  echo Mage::helper('anarchy_bitcoin/wallet')->getWallet(); ?></p>
+    </div>
 </div>
 <div>
     <?php echo $this->getMethod()->getConfigData('message');?>
