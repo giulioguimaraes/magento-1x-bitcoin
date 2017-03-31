@@ -24,4 +24,13 @@ class Anarchy_Bitcoin_Block_Form_Bitcoin extends Mage_Payment_Block_Form
     parent::_construct();
     $this->setTemplate('anarchy/bitcoin/form/bitcoin.phtml');
   }
+
+  public function getQrCode(){
+    return Mage::helper('anarchy_bitcoin/wallet')->createQrCodeWallet();
+  }
+
+  public function getWallet(){
+    return Mage::helper('anarchy_bitcoin/wallet')->getWallet();
+  }
+
 }
