@@ -76,6 +76,9 @@
                 <allowspecific>0</allowspecific>
                 <payment_action>sale</payment_action>
             </bitcoin>
+            <anarchy_bitcoin>
+                <apibitcoinaverage>https://api.bitcoinaverage.com/</apibitcoinaverage>
+            </anarchy_bitcoin>
         </payment>
     </default>
 </config>
