@@ -60,5 +60,5 @@ class Anarchy_Bitcoin_Helper_Wallet extends Mage_Core_Helper_Abstract{
     public function getWallet(){
          return Mage::getStoreConfig(self::PAYMENT_ANARCHY_BITCOIN_WALLET);
     }
-
+    
 }

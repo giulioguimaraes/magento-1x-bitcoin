@@ -19,9 +19,16 @@
  */
 ?> 
 <div class="form-list" id="payment_form_<?php echo $this->getMethodCode() ?>" style="display:none;">
-    <div class="anarchy-bitcoin-qrcode">
-        <img src="<?php echo $this->getQrCode();?>">
+    
+    <div class="anarchy-bitcoin-logo">
+        <img src="<?php  echo $this->getImageBitcoin(); ?>" width="250" height="250" >
     </div>
+
+
+    <div class="anarchy-bitcoin-qrcode">
+        <img src="<?php echo $this->getQrCode();?>" width="250" height="250">
+    </div>
+    
     <div class="anarchy-bitcoin-wallet">
         <p><?php  echo $this->getWallet(); ?></p>
     </div>
@@ -29,6 +36,11 @@
     <div class="anarchy-bitcoin-warning">
         <p><?php  echo $this->__("You can transfer after finish your purchase."); ?></p>
     </div>
+
+    <div class="">
+        <?php echo Mage::helper('anarchy_bitcoin/currency')->getCurrencyCode();?>
+    </div>
+
 </div>
 <div>
     <?php echo $this->getMethod()->getConfigData('message');?>
