@@ -24,9 +24,19 @@ class Anarchy_Bitcoin_Helper_Price extends Mage_Core_Helper_Abstract{
         Zend_Debug::dump($quote->getData("subtotal"));
     
     }
-    
+
+    public function bitcoinFormat($number){
+        return number_format($number,8);
+    }
+    public function conversionBitcoinPrice($number){
+        /*usar o metodo conversionCurrencyToBitcoin*/
+        return $number / 1200; 
+    }
+
     protected function  conversionCurrencyToBitcoin($convert){
         $currency = Mage::helper('anarchy_bitcoin/currency')->getCurrencyCode();
         
     }
+
+
 }
