@@ -36,8 +36,7 @@ class Anarchy_Bitcoin_Block_Catalog_Product_Price extends Mage_Catalog_Block_Pro
 {
     public function getPriceBitcoin(){
         $product = $this->getProduct();
-        $c = Mage::helper('anarchy_bitcoin/price')->conversionBitcoinPrice($product->getData('final_price'));
-        $bitcoin = Mage::helper('anarchy_bitcoin/price')->bitcoinFormat($c);
+        $bitcoin = Mage::helper('anarchy_bitcoin/price')->prepararBitcoin($product->getData('final_price'));
 
         return $bitcoin;
     }

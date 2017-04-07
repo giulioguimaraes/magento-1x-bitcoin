@@ -23,6 +23,34 @@ class Anarchy_Bitcoin_Helper_Ticker extends Mage_Core_Helper_Abstract{
     
     public function getApi(){
         return Mage::getStoreConfig(self::PAYMENT_ANARCHY_BITCOIN_APIBITCOINAVERAGE);
-    }     
+    
+    }
+
+    public function getTicker(){
+    
+        $url = Mage::getStoreConfig(self::PAYMENT_ANARCHY_BITCOIN_APIBITCOINAVERAGE);
+        
+        $uri = Mage::helper("anarchy_bitcoin/currency")->getCurrencyCode();
+
+        $client = new Zend_Http_Client($url."ticker/".$uri."/last");
+        $client->setMethod(Zend_Http_Client::GET);
+
+        try
+        {
+            
+            $response = $client->request();
+
+            if($response->getStatus() == 500){
+                Mage::throwException($this->__('Gateway request error: %s', 'ticker not supported'));
+            }
+
+        }
+        catch (Exception $e) 
+        {
+            Mage::throwException($this->__('Gateway request error: %s', $e->getMessage()));
+        }
+        return $response->getBody();
+        
+    }   
     
 }
