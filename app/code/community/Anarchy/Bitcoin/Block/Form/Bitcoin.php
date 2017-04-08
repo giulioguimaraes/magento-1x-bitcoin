@@ -25,25 +25,22 @@ class Anarchy_Bitcoin_Block_Form_Bitcoin extends Mage_Payment_Block_Form
   
   parent::_construct();
   
-    $this->setTemplate('anarchy/bitcoin/form/bitcoin.phtml');
+      $this->setTemplate('anarchy/bitcoin/form/bitcoin.phtml');
   
   }
 
   public function getQrCode(){
-  
-    return Mage::helper('anarchy_bitcoin/wallet')->createQrCodeWallet();
+      return Mage::helper('anarchy_bitcoin/wallet')->createQrCodeWallet();
   
   }
 
   public function getWallet(){
-  
-    return Mage::helper('anarchy_bitcoin/wallet')->getWallet();
+      return Mage::helper('anarchy_bitcoin/wallet')->getWallet();
   
   }
 
-  public function getImageBitcoin(){
-  
-    return Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."anarchy/bitcoin.png";
+  public function getSubTotal(){
+      return Mage::helper('anarchy_bitcoin/price')->getSubTotal();
   
   }
 

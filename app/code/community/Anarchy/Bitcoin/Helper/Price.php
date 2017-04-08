@@ -20,9 +20,11 @@
 class Anarchy_Bitcoin_Helper_Price extends Mage_Core_Helper_Abstract{
     
     public function getSubtotalBitcoin(){
-        $quote = Mage::getModel('checkout/session')->getQuote();   
-        Zend_Debug::dump($quote->getData("subtotal"));
-    
+        
+    }
+    public function getSubTotal(){
+        $quote = Mage::getModel('checkout/session')->getQuote();
+        return $this->prepararBitcoin($quote->getData("subtotal"));
     }
 
     public function bitcoinFormat($number){

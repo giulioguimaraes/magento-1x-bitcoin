@@ -81,4 +81,13 @@
             </anarchy_bitcoin>
         </payment>
     </default>
+    <frontend>
+         <layout>
+            <updates>
+                <pagarme>
+                    <file>anarchy_bitcoin.xml</file>
+                </pagarme>
+            </updates>
+        </layout>
+    </frontend>
 </config>
