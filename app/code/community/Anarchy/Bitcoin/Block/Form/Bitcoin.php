@@ -44,4 +44,10 @@ class Anarchy_Bitcoin_Block_Form_Bitcoin extends Mage_Payment_Block_Form
   
   }
 
+  public function getGrandTotal(){
+      return Mage::helper('anarchy_bitcoin/price')->getGrandTotal();
+  }
+  
+  
+
 }

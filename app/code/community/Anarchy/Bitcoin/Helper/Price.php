@@ -27,6 +27,12 @@ class Anarchy_Bitcoin_Helper_Price extends Mage_Core_Helper_Abstract{
         return $this->prepararBitcoin($quote->getData("subtotal"));
     }
 
+    public function getGrandTotal(){
+        $quote = Mage::getModel('checkout/session')->getQuote();
+        return $this->prepararBitcoin($quote->getData('grand_total'));
+    }
+    
+    
     public function bitcoinFormat($number){
         return number_format($number,8);
     }

@@ -30,6 +30,14 @@
         <img src="<?php echo $this->getQrCode();?>" width="250" height="250">
     </div>
 
+    <div class="anarchy-bitcoin-wallet">
+        <p><?php  echo $this->getWallet(); ?></p>
+    </div>
+    
+    <div class="anarchy-bitcoin-warning">
+        <p><?php  echo $this->__("You can transfer after finish your purchase."); ?></p>
+    </div>
+
 */
 ?>
 
@@ -37,16 +45,8 @@
         <img src="<?php echo $this->getSkinUrl('images/anarchy/bitcoin/bitcoin.svg') ?>" >
     </div>
 
-<div class="">
-    <?php echo $this->getSubTotal(); ?>
-</div>
-
-    <div class="anarchy-bitcoin-wallet">
-        <p><?php  echo $this->getWallet(); ?></p>
-    </div>
-    
-    <div class="anarchy-bitcoin-warning">
-        <p><?php  echo $this->__("You can transfer after finish your purchase."); ?></p>
+    <div class="">
+        <span>&#579; <?php echo $this->getGrandTotal(); ?></span>
     </div>
 
 </div>
