@@ -28,18 +28,28 @@
     
     <global>
         <fieldsets>
-<!--
-            <sales_convert_quote_payment>
-                <custom_field_one>
-                    <to_order_payment>*</to_order_payment>
-                </custom_field_one>
+            <sales_convert_quote>
+                <grand_total_bitcoin>
+                    <to_order>*</to_order>
+                </grand_total_bitcoin>          
+            </sales_convert_quote>
 
-                <custom_field_two>
-                    <to_order_payment>*</to_order_payment>
-                </custom_field_two>
-            </sales_convert_quote_payment>
--->
+            <sales_convert_order>
+                <grand_total_bitcoin>
+                    <to_quote>*</to_quote>
+                </grand_total_bitcoin>          
+            </sales_convert_order>
+           
         </fieldsets>
+
+        <fieldsets>
+            <sales_convert_quote>
+                <some_attribute>
+                    <to_order>*</to_order>
+                </some_attribute>
+            </sales_convert_quote>
+        </fieldsets>
+
         <helpers>
             <anarchy_bitcoin>
                 <class>Anarchy_Bitcoin_Helper</class>
@@ -55,15 +65,37 @@
                 <class>Anarchy_Bitcoin_Model</class>
             </anarchy_bitcoin>
         </models>
-<!--        
         <resources>
             <anarchy_bitcoin_setup>
                 <setup>
                     <module>Anarchy_Bitcoin</module>
                 </setup>
             </anarchy_bitcoin_setup>
-        </resources>
--->        
+       </resources>
+
+        <events>
+            <payment_info_block_prepare_specific_information>
+                <observers>
+                    <convert_and_save_quote_grand_total_bitcoin>
+                        <class>anarchy_bitcoin/observer</class>
+                        <method>saveGrandTotalBitcoin</method>
+                    </convert_and_save_quote_grand_total_bitcoin>
+                </observers>
+            </payment_info_block_prepare_specific_information>
+
+        
+        <!--
+            <sales_order_place_before>
+                <observers>
+                    <convert_and_save_quote_grand_total_bitcoin>
+                        <class>anarchy_bitcoin/observer</class>
+                        <method>saveGrandTotalBitcoin</method>
+                    </convert_and_save_quote_grand_total_bitcoin>
+                </observers>
+            </sales_order_place_before>
+        -->
+        </events>
+
     </global>
 
     <default>
